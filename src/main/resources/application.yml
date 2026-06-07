@@ -1,11 +1,17 @@
 server:
   port: 9090
+  servlet:
+    encoding:
+      charset: UTF-8        # 响应编码（对应旧版 spring.http.encoding.charset）
+      force: true           # 强制覆盖所有响应的编码（对应旧版 spring.http.encoding.force）
+      enabled: true         # 启用编码配置（对应旧版 spring.http.encoding.enabled）
+      force-response: true  # 额外确保响应编码生效（可选，高版本建议添加）
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rongxiaotong?serverTimezone=GMT%2B8&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/rongxiaotong?serverTimezone=GMT%2B8&useUnicode=true&characterEncodeing=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: root
+    password: farr123456
   jackson:
     time-zone: GMT+8
   redis:
@@ -14,11 +20,26 @@ spring:
   servlet:
     multipart:
       enabled: true
-      max-file-size: 100MB
+      max-file-size: 500MB
+      max-request-size: 500MB
+  application:
+    name: uploadService8007
+  resources:
+    static-locations: file:d:/wangyanan/file/order,file:d:/wangyanan/file/avatar,file:d:/wangyanan/file/video
+  mvc:
+    static-path-pattern: /file/**
+application:
+    upload-path: d:/wangyanan/file
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
 #nginx存放图片的路径
 file:
   location:
-    directory: E:\learn\nginx-1.21.1\images
+    directory: /usr/local/learn/docker/nginx/html/
 # 支付宝 appId,私钥，支付宝公钥
 alipay:
   info:

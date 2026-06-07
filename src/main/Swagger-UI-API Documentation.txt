@@ -1,0 +1,4524 @@
+basic-error-controller
+Basic Error Controller
+
+GET
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+HEAD
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+POST
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+OPTIONS
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+PATCH
+/error
+error
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "additionalProp1": {},
+  "additionalProp2": {},
+  "additionalProp3": {}
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+
+
+
+
+地址模块接口
+Address Controller
+
+POST
+/address/add
+添加地址
+Parameters
+Try it out
+Name	Description
+address *
+(body)
+address
+Example Value
+Model
+{
+  "addressDetail": "string",
+  "consignee": "string",
+  "id": 0,
+  "isDefault": true,
+  "ownName": "string",
+  "phone": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/address/defaultAddressInfoUpdate
+默认地址信息更新操作
+Parameters
+Try it out
+Name	Description
+address *
+(body)
+address
+Example Value
+Model
+{
+  "addressDetail": "string",
+  "consignee": "string",
+  "id": 0,
+  "isDefault": true,
+  "ownName": "string",
+  "phone": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/address/delete/{id}
+根据id删除地址
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/address/selectByOwnName
+根据登录用户名查询所有地址
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": [
+    {
+      "addressDetail": "string",
+      "consignee": "string",
+      "id": 0,
+      "isDefault": true,
+      "ownName": "string",
+      "phone": "string"
+    }
+  ],
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/address/selectDefaultByOwnName
+根据登录用户名查询默认地址
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "addressDetail": "string",
+    "consignee": "string",
+    "id": 0,
+    "isDefault": true,
+    "ownName": "string",
+    "phone": "string"
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/address/update/{id}
+根据id修改地址
+Parameters
+Try it out
+Name	Description
+address *
+(body)
+address
+Example Value
+Model
+{
+  "addressDetail": "string",
+  "consignee": "string",
+  "id": 0,
+  "isDefault": true,
+  "ownName": "string",
+  "phone": "string"
+}
+Parameter content type
+
+application/json
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+文件上传接口
+Files Upload Controller
+
+POST
+/file/upload/{type}
+头像上传
+Parameters
+Try it out
+Name	Description
+file *
+file
+(formData)
+file
+type *
+string
+(path)
+type
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/file/uploadInfo/{type}
+资料上传
+Parameters
+Try it out
+Name	Description
+file *
+file
+(formData)
+file
+type *
+string
+(path)
+type
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+
+用户模块接口
+User Controller
+
+GET
+/user
+查询所有用户
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": [
+    {
+      "address": "string",
+      "avatar": "string",
+      "createTime": "2025-09-04T07:26:10.457Z",
+      "credit": 0,
+      "identityNum": "string",
+      "integral": 0,
+      "nickName": "string",
+      "password": "string",
+      "phone": "string",
+      "realName": "string",
+      "role": "string",
+      "updateTime": "2025-09-04T07:26:10.457Z",
+      "userName": "string"
+    }
+  ],
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/user/{userName}
+根据用户名查询用户
+Parameters
+Try it out
+Name	Description
+userName *
+string
+(path)
+userName
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/user/{userName}
+根据用户名修改用户信息
+Parameters
+Try it out
+Name	Description
+user *
+(body)
+user
+Example Value
+Model
+{
+  "address": "string",
+  "avatar": "string",
+  "createTime": "2025-09-04T07:25:07.735Z",
+  "credit": 0,
+  "identityNum": "string",
+  "integral": 0,
+  "nickName": "string",
+  "password": "string",
+  "phone": "string",
+  "realName": "string",
+  "role": "string",
+  "updateTime": "2025-09-04T07:25:07.735Z",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+userName *
+string
+(path)
+userName
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/user/{userName}
+根据用户名删除用户
+Parameters
+Try it out
+Name	Description
+userName *
+string
+(path)
+userName
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+POST
+/user/add
+增加用户
+Parameters
+Try it out
+Name	Description
+user *
+(body)
+user
+Example Value
+Model
+{
+  "address": "string",
+  "avatar": "string",
+  "createTime": "2025-09-04T07:25:13.869Z",
+  "credit": 0,
+  "identityNum": "string",
+  "integral": 0,
+  "nickName": "string",
+  "password": "string",
+  "phone": "string",
+  "realName": "string",
+  "role": "string",
+  "updateTime": "2025-09-04T07:25:13.870Z",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/user/addexpert
+增加专家详情
+Parameters
+Try it out
+Name	Description
+expert *
+(body)
+expert
+Example Value
+Model
+{
+  "belong": "string",
+  "phone": "string",
+  "position": "string",
+  "profession": "string",
+  "realName": "string",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/user/addUpdexpert
+增加或修改专家详情
+Parameters
+Try it out
+Name	Description
+expert *
+(body)
+expert
+Example Value
+Model
+{
+  "belong": "string",
+  "phone": "string",
+  "position": "string",
+  "profession": "string",
+  "realName": "string",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/user/deleteexpert/{userName}
+删除专家详情
+Parameters
+Try it out
+Name	Description
+userName *
+string
+(path)
+userName
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/user/loginSelectByUsername
+用户登录之后，根据用户名展示个人信息
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "address": "string",
+    "avatar": "string",
+    "createTime": "2025-09-04T07:26:10.469Z",
+    "credit": 0,
+    "identityNum": "string",
+    "integral": 0,
+    "nickName": "string",
+    "password": "string",
+    "phone": "string",
+    "realName": "string",
+    "role": "string",
+    "updateTime": "2025-09-04T07:26:10.469Z",
+    "userName": "string"
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/user/loginUpdateByUsername
+用户登录之后，根据用户名修改个人基本信息
+Parameters
+Try it out
+Name	Description
+user *
+(body)
+user
+Example Value
+Model
+{
+  "address": "string",
+  "avatar": "string",
+  "createTime": "2025-09-04T07:25:44.981Z",
+  "credit": 0,
+  "identityNum": "string",
+  "integral": 0,
+  "nickName": "string",
+  "password": "string",
+  "phone": "string",
+  "realName": "string",
+  "role": "string",
+  "updateTime": "2025-09-04T07:25:44.981Z",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/user/loginUpdatePassword
+用户登录之后，修改用户密码
+Parameters
+Try it out
+Name	Description
+passwordParam *
+(body)
+passwordParam
+Example Value
+Model
+{
+  "newPassword": "string",
+  "oldPassword": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/user/search/{pageNum}
+分页查询所有用户
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/user/search/{pageNum}/{pageSize}
+分页条件查询用户
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+pageSize *
+integer($int32)
+(path)
+pageSize
+user *
+(body)
+user
+Example Value
+Model
+{
+  "address": "string",
+  "avatar": "string",
+  "createTime": "2025-09-04T07:25:58.451Z",
+  "credit": 0,
+  "identityNum": "string",
+  "integral": 0,
+  "nickName": "string",
+  "password": "string",
+  "phone": "string",
+  "realName": "string",
+  "role": "string",
+  "updateTime": "2025-09-04T07:25:58.451Z",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/user/searchallexpert
+查询所有专家详情
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/user/searchexpert
+查询专家详情
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/user/updateexpert
+更新专家详情
+Parameters
+Try it out
+Name	Description
+expert *
+(body)
+expert
+Example Value
+Model
+{
+  "belong": "string",
+  "phone": "string",
+  "position": "string",
+  "profession": "string",
+  "realName": "string",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+
+知识模块接口
+Knowledge Controller
+
+POST
+/knowledge
+添加知识
+Parameters
+Try it out
+Name	Description
+knowledge *
+(body)
+knowledge
+Example Value
+Model
+{
+  "content": "string",
+  "createTime": "2025-09-04T07:37:01.284Z",
+  "knowledgeId": 0,
+  "ownName": "string",
+  "picPath": "string",
+  "title": "string",
+  "updateTime": "2025-09-04T07:37:01.284Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/knowledge/{id}
+根据id修改知识
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+knowledge *
+(body)
+knowledge
+Example Value
+Model
+{
+  "content": "string",
+  "createTime": "2025-09-04T08:09:04.398Z",
+  "knowledgeId": 0,
+  "ownName": "string",
+  "picPath": "string",
+  "title": "string",
+  "updateTime": "2025-09-04T08:09:04.398Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/knowledge/{id}
+根据id删除知识
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/knowledge/{keys}/{pageNum}
+分页条件查询所有知识
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {
+        "content": "string",
+        "createTime": "2025-09-04T08:09:39.164Z",
+        "knowledgeId": 0,
+        "ownName": "string",
+        "picPath": "string",
+        "title": "string",
+        "updateTime": "2025-09-04T08:09:39.164Z"
+      }
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/knowledge/{pageNum}
+分页查询所有知识
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {
+        "content": "string",
+        "createTime": "2025-09-04T08:09:39.169Z",
+        "knowledgeId": 0,
+        "ownName": "string",
+        "picPath": "string",
+        "title": "string",
+        "updateTime": "2025-09-04T08:09:39.169Z"
+      }
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/knowledge/addByKnowledge/{id}/{content}
+添加讨论消息
+Parameters
+Try it out
+Name	Description
+content *
+string
+(path)
+content
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/knowledge/selectById/{id}
+根据id查询知识
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/knowledge/selectByKnowledge/{id}
+查询讨论消息
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/knowledge/selectByUsername
+根据登录用户查询知识
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+
+
+融资模块接口
+Finance Controller
+
+POST
+/finance/add
+添加单人贷款
+Parameters
+Try it out
+Name	Description
+finance *
+(body)
+finance
+Example Value
+Model
+{
+  "bankId": 0,
+  "combinationIdnum1": "string",
+  "combinationIdnum2": "string",
+  "combinationName1": "string",
+  "combinationName2": "string",
+  "combinationPhone1": "string",
+  "combinationPhone2": "string",
+  "createTime": "2025-09-04T08:10:11.581Z",
+  "fileInfo": "string",
+  "financeId": 0,
+  "idNum": "string",
+  "money": 0,
+  "ownName": "string",
+  "phone": "string",
+  "rate": 0,
+  "realName": "string",
+  "repayment": 0,
+  "status": 0,
+  "updateTime": "2025-09-04T08:10:11.582Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/finance/addFinanceMulti
+添加组合贷款
+Parameters
+Try it out
+Name	Description
+finance *
+(body)
+finance
+Example Value
+Model
+{
+  "bankId": 0,
+  "combinationIdnum1": "string",
+  "combinationIdnum2": "string",
+  "combinationName1": "string",
+  "combinationName2": "string",
+  "combinationPhone1": "string",
+  "combinationPhone2": "string",
+  "createTime": "2025-09-04T09:13:14.147Z",
+  "fileInfo": "string",
+  "financeId": 0,
+  "idNum": "string",
+  "money": 0,
+  "ownName": "string",
+  "phone": "string",
+  "rate": 0,
+  "realName": "string",
+  "repayment": 0,
+  "status": 0,
+  "updateTime": "2025-09-04T09:13:14.147Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/finance/delete/{id}
+根据id删除融资情报
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+DELETE
+/finance/deleteIntentionByName
+删除融资意向
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+POST
+/finance/insertIntentionByName
+添加融资意向
+Parameters
+Try it out
+Name	Description
+intention *
+(body)
+intention
+Example Value
+Model
+{
+  "address": "string",
+  "amount": 0,
+  "application": "string",
+  "area": 0,
+  "createTime": "2025-09-04T09:13:25.720Z",
+  "item": "string",
+  "phone": "string",
+  "realName": "string",
+  "repaymentPeriod": 0,
+  "updateTime": "2025-09-04T09:13:25.720Z",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectbank
+查询银行情报
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectById/{id}
+根据id查询融资情报
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectByName
+查询融资情况
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectFinaceUser/{bankId}
+单人贷款
+Parameters
+Try it out
+Name	Description
+bankId *
+string
+(path)
+bankId
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectIfApply
+查询是否已经贷款
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectIntentionByName
+查询融资意向
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/finance/selectRecommendByName
+查询推荐融资人
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/finance/update
+根据id修改融资情报
+Parameters
+Try it out
+Name	Description
+finance *
+(body)
+finance
+Example Value
+Model
+{
+  "bankId": 0,
+  "combinationIdnum1": "string",
+  "combinationIdnum2": "string",
+  "combinationName1": "string",
+  "combinationName2": "string",
+  "combinationPhone1": "string",
+  "combinationPhone2": "string",
+  "createTime": "2025-09-04T09:18:03.299Z",
+  "fileInfo": "string",
+  "financeId": 0,
+  "idNum": "string",
+  "money": 0,
+  "ownName": "string",
+  "phone": "string",
+  "rate": 0,
+  "realName": "string",
+  "repayment": 0,
+  "status": 0,
+  "updateTime": "2025-09-04T09:18:03.310Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/finance/updateIntentionByName
+修改融资意向
+Parameters
+Try it out
+Name	Description
+intention *
+(body)
+intention
+Example Value
+Model
+{
+  "address": "string",
+  "amount": 0,
+  "application": "string",
+  "area": 0,
+  "createTime": "2025-09-04T09:18:01.977Z",
+  "item": "string",
+  "phone": "string",
+  "realName": "string",
+  "repaymentPeriod": 0,
+  "updateTime": "2025-09-04T09:18:01.978Z",
+  "userName": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+订单模块接口
+Order Controller
+
+POST
+/order
+添加商品
+Parameters
+Try it out
+Name	Description
+order *
+(body)
+order
+Example Value
+Model
+{
+  "address": "string",
+  "content": "string",
+  "cooperationName": "string",
+  "createTime": "2025-09-04T09:32:04.339Z",
+  "orderId": 0,
+  "orderStatus": 0,
+  "ownName": "string",
+  "picture": "string",
+  "price": "string",
+  "title": "string",
+  "type": "string",
+  "updateTime": "2025-09-04T09:32:04.339Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/order/{id}
+根据id修改商品
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+order *
+(body)
+order
+Example Value
+Model
+{
+  "address": "string",
+  "content": "string",
+  "cooperationName": "string",
+  "createTime": "2025-09-04T09:31:56.049Z",
+  "orderId": 0,
+  "orderStatus": 0,
+  "ownName": "string",
+  "picture": "string",
+  "price": "string",
+  "title": "string",
+  "type": "string",
+  "updateTime": "2025-09-04T09:31:56.049Z"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": "string",
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/order/{id}
+根据id删除商品
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/order/All/{pageNum}
+查询所有商品
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/goods/{pageNum}
+分页查询所有货源(商品)商品
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/needs/{pageNum}
+分页查询所有需求
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/search/{type}/{pageNum}
+根据用户名+订单类型查询商品
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+type *
+string
+(path)
+type
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/searchAllByKeys/{keys}/{pageNum}
+分页条件搜索所有商品
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/searchGoodsByKeys/{keys}/{pageNum}
+分页条件搜索商品（货源）订单
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/searchMyGoodsByKeys/{keys}/{pageNum}
+分页条件搜索商品（货源）商品
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/searchMyNeedsByKeys/{keys}/{pageNum}
+分页条件搜索需求商品
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/searchNeedsByKeys/{keys}/{pageNum}
+分页条件搜索需求商品
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {}
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/selectBuys
+根据登录用户查询我买的订单
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": [
+    {
+      "address": "string",
+      "createTime": "2025-09-04T09:32:04.311Z",
+      "ownName": "string",
+      "picture": "string",
+      "purchaseId": 0,
+      "purchaseStatus": 0,
+      "purchaseType": 0,
+      "totalPrice": 0,
+      "updateTime": "2025-09-04T09:32:04.311Z"
+    }
+  ],
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/selectBuysDetail/{id}
+根据登录用户查询我买的订单详情
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": [
+    {
+      "count": 0,
+      "detailId": 0,
+      "orderId": 0,
+      "purchaseId": 0,
+      "sumPrice": 0,
+      "uninPrice": 0
+    }
+  ],
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/selectById/{id}
+根据id查询商品
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "address": "string",
+    "content": "string",
+    "cooperationName": "string",
+    "createTime": "2025-09-04T09:32:04.315Z",
+    "orderId": 0,
+    "orderStatus": 0,
+    "ownName": "string",
+    "picture": "string",
+    "price": "string",
+    "title": "string",
+    "type": "string",
+    "updateTime": "2025-09-04T09:32:04.315Z"
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/order/selectSells
+根据登录用户查询我卖出的订单
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": [
+    {
+      "address": "string",
+      "createTime": "2025-09-04T09:32:04.319Z",
+      "orderId": 0,
+      "ownName": "string",
+      "phone": "string",
+      "purchaseId": 0,
+      "purchaseStatus": 0,
+      "purchaseType": 0,
+      "sellPurchaseId": 0,
+      "sumPrice": 0,
+      "uninPricee": 0,
+      "updateTime": "2025-09-04T09:32:04.319Z"
+    }
+  ],
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/order/takeDownOrder/{orderId}
+商品下架
+Parameters
+Try it out
+Name	Description
+orderId *
+string
+(path)
+orderId
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/order/takeUpOrder/{orderId}
+商品上架
+Parameters
+Try it out
+Name	Description
+orderId *
+string
+(path)
+orderId
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+
+
+购物车接口
+Cart Controller
+
+POST
+/cart/add/{id}
+添加商品到购物车
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+POST
+/cart/commitOrder/{addId}/{tMoney}
+提交订单
+Parameters
+Try it out
+Name	Description
+addId *
+integer($int32)
+(path)
+addId
+shoppingModelList *
+(body)
+shoppingModelList
+Example Value
+Model
+[
+  {
+    "content": "string",
+    "count": 0,
+    "orderId": 0,
+    "ownName": "string",
+    "picture": "string",
+    "price": "string",
+    "shoppingId": 0,
+    "title": "string"
+  }
+]
+Parameter content type
+
+application/json
+tMoney *
+string
+(path)
+tMoney
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/cart/delete/{id}
+从购物车删除商品
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/cart/show
+展示购物车列表
+Parameters
+Try it out
+No parameters
+
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": [
+    {
+      "content": "string",
+      "count": 0,
+      "orderId": 0,
+      "ownName": "string",
+      "picture": "string",
+      "price": "string",
+      "shoppingId": 0,
+      "title": "string"
+    }
+  ],
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/cart/update/{id}/{count}
+更新购物车数量
+Parameters
+Try it out
+Name	Description
+count *
+integer($int32)
+(path)
+count
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+
+问题模块接口
+Question Controller
+
+POST
+/question/add
+添加询问情报
+Parameters
+Try it out
+Name	Description
+question *
+(body)
+question
+Example Value
+Model
+{
+  "answer": "string",
+  "expertName": "string",
+  "id": 0,
+  "phone": "string",
+  "plantName": "string",
+  "question": "string",
+  "questioner": "string",
+  "status": 0,
+  "title": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/question/delete/{id}
+根据id删除询问情报
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/question/findAllQues/{pageNum}
+分页查询所有问答情况
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {
+        "answer": "string",
+        "expertName": "string",
+        "id": 0,
+        "phone": "string",
+        "plantName": "string",
+        "question": "string",
+        "questioner": "string",
+        "status": 0,
+        "title": "string"
+      }
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/question/findExpert/{pageNum}
+分页查询所有专家
+Parameters
+Try it out
+Name	Description
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {
+        "belong": "string",
+        "phone": "string",
+        "position": "string",
+        "profession": "string",
+        "realName": "string",
+        "userName": "string"
+      }
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/question/findExpertByKeys/{keys}/{pageNum}
+分页条件查询专家
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {
+        "belong": "string",
+        "phone": "string",
+        "position": "string",
+        "profession": "string",
+        "realName": "string",
+        "userName": "string"
+      }
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/question/findPageQues/{keys}/{pageNum}
+分页条件查询所有问答情况
+Parameters
+Try it out
+Name	Description
+keys *
+string
+(path)
+keys
+pageNum *
+integer($int32)
+(path)
+pageNum
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {
+    "endRow": 0,
+    "hasNextPage": true,
+    "hasPreviousPage": true,
+    "isFirstPage": true,
+    "isLastPage": true,
+    "list": [
+      {
+        "answer": "string",
+        "expertName": "string",
+        "id": 0,
+        "phone": "string",
+        "plantName": "string",
+        "question": "string",
+        "questioner": "string",
+        "status": 0,
+        "title": "string"
+      }
+    ],
+    "navigateFirstPage": 0,
+    "navigateLastPage": 0,
+    "navigatePages": 0,
+    "navigatepageNums": [
+      0
+    ],
+    "nextPage": 0,
+    "pageNum": 0,
+    "pageSize": 0,
+    "pages": 0,
+    "prePage": 0,
+    "size": 0,
+    "startRow": 0,
+    "total": 0
+  },
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/question/selectByKind/{kind}
+根据用户查询询问情况
+Parameters
+Try it out
+Name	Description
+kind *
+string
+(path)
+kind
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/question/selectId/{id}
+根据ID查询询问情况
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/question/update
+根据id修改询问情报
+Parameters
+Try it out
+Name	Description
+question *
+(body)
+question
+Example Value
+Model
+{
+  "answer": "string",
+  "expertName": "string",
+  "id": 0,
+  "phone": "string",
+  "plantName": "string",
+  "question": "string",
+  "questioner": "string",
+  "status": 0,
+  "title": "string"
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+预约模块接口
+Reserve Controller
+
+POST
+/reserve/add
+添加预约情报
+Parameters
+Try it out
+Name	Description
+reserve *
+(body)
+reserve
+Example Value
+Model
+{
+  "address": "string",
+  "answer": "string",
+  "area": "string",
+  "expertName": "string",
+  "id": 0,
+  "message": "string",
+  "phone": "string",
+  "plantCondition": "string",
+  "plantDetail": "string",
+  "plantName": "string",
+  "questioner": "string",
+  "soilCondition": "string",
+  "status": 0
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+DELETE
+/reserve/delete/{id}
+根据id删除预约情报
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+204
+No Content
+401
+Unauthorized
+403
+Forbidden
+GET
+/reserve/selectByKind/{kind}
+根据用户查询预约情况
+Parameters
+Try it out
+Name	Description
+kind *
+string
+(path)
+kind
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+GET
+/reserve/selectId/{id}
+根据ID查询预约情况
+Parameters
+Try it out
+Name	Description
+id *
+integer($int32)
+(path)
+id
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+PUT
+/reserve/update
+根据id修改预约情报
+Parameters
+Try it out
+Name	Description
+reserve *
+(body)
+reserve
+Example Value
+Model
+{
+  "address": "string",
+  "answer": "string",
+  "area": "string",
+  "expertName": "string",
+  "id": 0,
+  "message": "string",
+  "phone": "string",
+  "plantCondition": "string",
+  "plantDetail": "string",
+  "plantName": "string",
+  "questioner": "string",
+  "soilCondition": "string",
+  "status": 0
+}
+Parameter content type
+
+application/json
+Responses
+Response content type
+
+*/*
+Code	Description
+200
+OK
+Example Value
+Model
+{
+  "code": 0,
+  "data": {},
+  "flag": true,
+  "message": "string"
+}
+201
+Created
+401
+Unauthorized
+403
+Forbidden
+404
+Not Found
+
+
+
+
+
+
+
+Models
+Address{
+addressDetail	string
+consignee	string
+id	integer($int32)
+isDefault	boolean
+ownName	string
+phone	string
+}
+Expert{
+belong	string
+phone	string
+position	string
+profession	string
+realName	string
+userName	string
+}
+Finance{
+bankId	integer($int32)
+combinationIdnum1	string
+combinationIdnum2	string
+combinationName1	string
+combinationName2	string
+combinationPhone1	string
+combinationPhone2	string
+createTime	string($date-time)
+fileInfo	string
+financeId	integer($int32)
+idNum	string
+money	number
+ownName	string
+phone	string
+rate	number
+realName	string
+repayment	integer($int32)
+status	integer($int32)
+updateTime	string($date-time)
+}
+Intention{
+address	string
+amount	integer($int32)
+application	string
+area	integer($int32)
+createTime	string($date-time)
+item	string
+phone	string
+realName	string
+repaymentPeriod	integer($int32)
+updateTime	string($date-time)
+userName	string
+}
+Knowledge{
+content	string
+createTime	string($date-time)
+knowledgeId	integer($int32)
+ownName	string
+picPath	string
+title	string
+updateTime	string($date-time)
+}
+ModelAndView{
+empty	boolean
+model	{
+}
+modelMap	{
+< * >:	{
+}
+}
+reference	boolean
+status	string
+Enum:
+[ 100 CONTINUE, 101 SWITCHING_PROTOCOLS, 102 PROCESSING, 103 CHECKPOINT, 200 OK, 201 CREATED, 202 ACCEPTED, 203 NON_AUTHORITATIVE_INFORMATION, 204 NO_CONTENT, 205 RESET_CONTENT, 206 PARTIAL_CONTENT, 207 MULTI_STATUS, 208 ALREADY_REPORTED, 226 IM_USED, 300 MULTIPLE_CHOICES, 301 MOVED_PERMANENTLY, 302 FOUND, 302 MOVED_TEMPORARILY, 303 SEE_OTHER, 304 NOT_MODIFIED, 305 USE_PROXY, 307 TEMPORARY_REDIRECT, 308 PERMANENT_REDIRECT, 400 BAD_REQUEST, 401 UNAUTHORIZED, 402 PAYMENT_REQUIRED, 403 FORBIDDEN, 404 NOT_FOUND, 405 METHOD_NOT_ALLOWED, 406 NOT_ACCEPTABLE, 407 PROXY_AUTHENTICATION_REQUIRED, 408 REQUEST_TIMEOUT, 409 CONFLICT, 410 GONE, 411 LENGTH_REQUIRED, 412 PRECONDITION_FAILED, 413 PAYLOAD_TOO_LARGE, 413 REQUEST_ENTITY_TOO_LARGE, 414 URI_TOO_LONG, 414 REQUEST_URI_TOO_LONG, 415 UNSUPPORTED_MEDIA_TYPE, 416 REQUESTED_RANGE_NOT_SATISFIABLE, 417 EXPECTATION_FAILED, 418 I_AM_A_TEAPOT, 419 INSUFFICIENT_SPACE_ON_RESOURCE, 420 METHOD_FAILURE, 421 DESTINATION_LOCKED, 422 UNPROCESSABLE_ENTITY, 423 LOCKED, 424 FAILED_DEPENDENCY, 425 TOO_EARLY, 426 UPGRADE_REQUIRED, 428 PRECONDITION_REQUIRED, 429 TOO_MANY_REQUESTS, 431 REQUEST_HEADER_FIELDS_TOO_LARGE, 451 UNAVAILABLE_FOR_LEGAL_REASONS, 500 INTERNAL_SERVER_ERROR, 501 NOT_IMPLEMENTED, 502 BAD_GATEWAY, 503 SERVICE_UNAVAILABLE, 504 GATEWAY_TIMEOUT, 505 HTTP_VERSION_NOT_SUPPORTED, 506 VARIANT_ALSO_NEGOTIATES, 507 INSUFFICIENT_STORAGE, 508 LOOP_DETECTED, 509 BANDWIDTH_LIMIT_EXCEEDED, 510 NOT_EXTENDED, 511 NETWORK_AUTHENTICATION_REQUIRED ]
+view	View{
+contentType	string
+}
+viewName	string
+}
+MyPurchase{
+address	string
+createTime	string($date-time)
+ownName	string
+picture	string
+purchaseId	integer($int32)
+purchaseStatus	integer($int32)
+purchaseType	integer($int32)
+totalPrice	number
+updateTime	string($date-time)
+}
+PageInfo{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[{
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+PageInfo«Expert»{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[Expert{
+belong	string
+phone	string
+position	string
+profession	string
+realName	string
+userName	string
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+PageInfo«Knowledge»{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[Knowledge{
+content	string
+createTime	string($date-time)
+knowledgeId	integer($int32)
+ownName	string
+picPath	string
+title	string
+updateTime	string($date-time)
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+PageInfo«Question»{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[Question{
+answer	string
+expertName	string
+id	integer($int32)
+phone	string
+plantName	string
+question	string
+questioner	string
+status	integer($int32)
+title	string
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+PasswordParam{
+newPassword	string
+oldPassword	string
+}
+PurchaseDetail{
+count	integer($int32)
+detailId	integer($int32)
+orderId	integer($int32)
+purchaseId	integer($int32)
+sumPrice	number
+uninPrice	number
+}
+Question{
+answer	string
+expertName	string
+id	integer($int32)
+phone	string
+plantName	string
+question	string
+questioner	string
+status	integer($int32)
+title	string
+}
+Reserve{
+address	string
+answer	string
+area	string
+expertName	string
+id	integer($int32)
+message	string
+phone	string
+plantCondition	string
+plantDetail	string
+plantName	string
+questioner	string
+soilCondition	string
+status	integer($int32)
+}
+Result{
+code	integer($int32)
+data	{
+}
+flag	boolean
+message	string
+}
+Result«Address»{
+code	integer($int32)
+data	Address{
+addressDetail	string
+consignee	string
+id	integer($int32)
+isDefault	boolean
+ownName	string
+phone	string
+}
+flag	boolean
+message	string
+}
+Result«List«Address»»{
+code	integer($int32)
+data	[Address{
+addressDetail	string
+consignee	string
+id	integer($int32)
+isDefault	boolean
+ownName	string
+phone	string
+}]
+flag	boolean
+message	string
+}
+Result«List«MyPurchase»»{
+code	integer($int32)
+data	[MyPurchase{
+address	string
+createTime	string($date-time)
+ownName	string
+picture	string
+purchaseId	integer($int32)
+purchaseStatus	integer($int32)
+purchaseType	integer($int32)
+totalPrice	number
+updateTime	string($date-time)
+}]
+flag	boolean
+message	string
+}
+Result«List«PurchaseDetail»»{
+code	integer($int32)
+data	[PurchaseDetail{
+count	integer($int32)
+detailId	integer($int32)
+orderId	integer($int32)
+purchaseId	integer($int32)
+sumPrice	number
+uninPrice	number
+}]
+flag	boolean
+message	string
+}
+Result«List«SellPurchase»»{
+code	integer($int32)
+data	[SellPurchase{
+address	string
+createTime	string($date-time)
+orderId	integer($int32)
+ownName	string
+phone	string
+purchaseId	integer($int32)
+purchaseStatus	integer($int32)
+purchaseType	integer($int32)
+sellPurchaseId	integer($int32)
+sumPrice	number
+uninPricee	number
+updateTime	string($date-time)
+}]
+flag	boolean
+message	string
+}
+Result«List«ShoppingModel»»{
+code	integer($int32)
+data	[ShoppingModel{
+content	string
+count	integer($int32)
+orderId	integer($int32)
+ownName	string
+picture	string
+price	string
+shoppingId	integer($int32)
+title	string
+}]
+flag	boolean
+message	string
+}
+Result«List«User»»{
+code	integer($int32)
+data	[User{
+address	string
+avatar	string
+createTime	string($date-time)
+credit	integer($int32)
+identityNum	string
+integral	integer($int32)
+nickName	string
+password	string
+phone	string
+realName	string
+role	string
+updateTime	string($date-time)
+userName	string
+}]
+flag	boolean
+message	string
+}
+Result«PageInfo«Expert»»{
+code	integer($int32)
+data	PageInfo«Expert»{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[Expert{
+belong	string
+phone	string
+position	string
+profession	string
+realName	string
+userName	string
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+flag	boolean
+message	string
+}
+Result«PageInfo«Knowledge»»{
+code	integer($int32)
+data	PageInfo«Knowledge»{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[Knowledge{
+content	string
+createTime	string($date-time)
+knowledgeId	integer($int32)
+ownName	string
+picPath	string
+title	string
+updateTime	string($date-time)
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+flag	boolean
+message	string
+}
+Result«PageInfo«Question»»{
+code	integer($int32)
+data	PageInfo«Question»{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[Question{
+answer	string
+expertName	string
+id	integer($int32)
+phone	string
+plantName	string
+question	string
+questioner	string
+status	integer($int32)
+title	string
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+flag	boolean
+message	string
+}
+Result«PageInfo»{
+code	integer($int32)
+data	PageInfo{
+endRow	integer($int64)
+hasNextPage	boolean
+hasPreviousPage	boolean
+isFirstPage	boolean
+isLastPage	boolean
+list	[{
+}]
+navigateFirstPage	integer($int32)
+navigateLastPage	integer($int32)
+navigatePages	integer($int32)
+navigatepageNums	[integer($int32)]
+nextPage	integer($int32)
+pageNum	integer($int32)
+pageSize	integer($int32)
+pages	integer($int32)
+prePage	integer($int32)
+size	integer($int32)
+startRow	integer($int64)
+total	integer($int64)
+}
+flag	boolean
+message	string
+}
+Result«User»{
+code	integer($int32)
+data	User{
+address	string
+avatar	string
+createTime	string($date-time)
+credit	integer($int32)
+identityNum	string
+integral	integer($int32)
+nickName	string
+password	string
+phone	string
+realName	string
+role	string
+updateTime	string($date-time)
+userName	string
+}
+flag	boolean
+message	string
+}
+Result«oder»{
+code	integer($int32)
+data	oder{
+description:
+商品
+
+address	string
+content	string
+cooperationName	string
+createTime	string($date-time)
+orderId	integer($int32)
+orderStatus	integer($int32)
+ownName	string
+picture	string
+price	string
+title	string
+type	string
+updateTime	string($date-time)
+}
+flag	boolean
+message	string
+}
+Result«string»{
+code	integer($int32)
+data	string
+flag	boolean
+message	string
+}
+SellPurchase{
+address	string
+createTime	string($date-time)
+orderId	integer($int32)
+ownName	string
+phone	string
+purchaseId	integer($int32)
+purchaseStatus	integer($int32)
+purchaseType	integer($int32)
+sellPurchaseId	integer($int32)
+sumPrice	number
+uninPricee	number
+updateTime	string($date-time)
+}
+ShoppingModel{
+content	string
+count	integer($int32)
+orderId	integer($int32)
+ownName	string
+picture	string
+price	string
+shoppingId	integer($int32)
+title	string
+}
+User{
+address	string
+avatar	string
+createTime	string($date-time)
+credit	integer($int32)
+identityNum	string
+integral	integer($int32)
+nickName	string
+password	string
+phone	string
+realName	string
+role	string
+updateTime	string($date-time)
+userName	string
+}
+View{
+contentType	string
+}
+oder{
+description:
+商品
+
+address	string
+content	string
+cooperationName	string
+createTime	string($date-time)
+orderId	integer($int32)
+orderStatus	integer($int32)
+ownName	string
+picture	string
+price	string
+title	string
+type	string
+updateTime	string($date-time)
+}
