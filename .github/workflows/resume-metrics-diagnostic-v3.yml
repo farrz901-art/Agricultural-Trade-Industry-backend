@@ -1,0 +1,43 @@
+name: Resume Metrics Maven Diagnostic V3
+
+on:
+  push:
+    branches:
+      - resume-metrics-ci
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-after-entry-filename-normalization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
+      - name: Normalize entry filename only in runner workspace
+        run: mv src/main/java/com/qst/crop/ATIApplication.java src/main/java/com/qst/crop/RongXiaoTongApplication.java
+      - name: Compile and capture result
+        shell: bash
+        run: |
+          set +e
+          mvn -B -DskipTests package > normalized-build.log 2>&1
+          CODE=$?
+          set -e
+          echo "buildExit=$CODE" > diagnostic-v3.txt
+          tail -n 160 normalized-build.log || true
+      - name: Upload diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maven-diagnostic-v3
+          path: |
+            diagnostic-v3.txt
+            normalized-build.log
+          if-no-files-found: warn
+          retention-days: 7
