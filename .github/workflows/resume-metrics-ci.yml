@@ -1,0 +1,105 @@
+name: Resume Metrics CI
+
+on:
+  push:
+    branches:
+      - resume-metrics-ci
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backend-metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
+
+      - name: Run legacy tests
+        id: tests
+        continue-on-error: true
+        run: mvn -B test
+
+      - name: Build package without tests
+        id: build
+        continue-on-error: true
+        run: mvn -B -DskipTests package
+
+      - name: Collect static and test metrics
+        if: always()
+        env:
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+        shell: bash
+        run: |
+          python3 <<'PY'
+          import json, re, xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          root = Path('.')
+          controller_dir = root / 'src/main/java/com/qst/crop/controller'
+          entity_dir = root / 'src/main/java/com/qst/crop/entity'
+          mapper_dir = root / 'src/main/resources/mapper'
+
+          controllers = sorted(controller_dir.glob('*.java'))
+          entities = sorted(entity_dir.glob('*.java'))
+          mappers = sorted(mapper_dir.glob('*.xml'))
+
+          endpoint_annotations = 0
+          endpoint_by_type = {k: 0 for k in ['GetMapping','PostMapping','PutMapping','DeleteMapping','PatchMapping']}
+          api_operations = 0
+          for f in controllers:
+              text = f.read_text(encoding='utf-8', errors='ignore')
+              for kind in endpoint_by_type:
+                  n = len(re.findall(r'@' + kind + r'\b', text))
+                  endpoint_by_type[kind] += n
+                  endpoint_annotations += n
+              api_operations += len(re.findall(r'@ApiOperation\b', text))
+
+          test_metrics = {'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+          report_dir = root / 'target/surefire-reports'
+          if report_dir.exists():
+              for xml_file in report_dir.glob('TEST-*.xml'):
+                  try:
+                      suite = ET.parse(xml_file).getroot()
+                      for key in test_metrics:
+                          test_metrics[key] += int(float(suite.attrib.get(key, 0)))
+                  except Exception:
+                      pass
+
+          metrics = {
+              'controllerCount': len(controllers),
+              'controllerFiles': [f.name for f in controllers],
+              'mappedEndpointCount': endpoint_annotations,
+              'endpointByType': endpoint_by_type,
+              'swaggerApiOperationCount': api_operations,
+              'entityClassCount': len(entities),
+              'mapperXmlCount': len(mappers),
+              'legacyTestMetrics': test_metrics,
+              'mavenTestOutcome': __import__('os').environ.get('TEST_OUTCOME'),
+              'packageBuildOutcome': __import__('os').environ.get('BUILD_OUTCOME'),
+          }
+          Path('resume-metrics.json').write_text(json.dumps(metrics, ensure_ascii=False, indent=2), encoding='utf-8')
+          print(json.dumps(metrics, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload metrics artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-metrics
+          path: |
+            resume-metrics.json
+            target/surefire-reports/
+          if-no-files-found: warn
+          retention-days: 7
