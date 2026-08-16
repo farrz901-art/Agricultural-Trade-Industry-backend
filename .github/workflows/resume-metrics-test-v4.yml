@@ -1,0 +1,89 @@
+name: Resume Metrics Maven Test V4
+
+on:
+  push:
+    branches:
+      - resume-metrics-ci
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-after-entry-filename-normalization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+          cache: maven
+      - name: Normalize entry filename only in runner workspace
+        run: mv src/main/java/com/qst/crop/ATIApplication.java src/main/java/com/qst/crop/RongXiaoTongApplication.java
+      - name: Run Maven tests and collect Surefire totals
+        shell: bash
+        run: |
+          set +e
+          START=$(date +%s%3N)
+          mvn -B test > normalized-test.log 2>&1
+          CODE=$?
+          END=$(date +%s%3N)
+          set -e
+          python3 <<'PY'
+          import json, os, xml.etree.ElementTree as ET
+          from pathlib import Path
+          totals={'tests':0,'failures':0,'errors':0,'skipped':0}
+          rd=Path('target/surefire-reports')
+          if rd.exists():
+              for f in rd.glob('TEST-*.xml'):
+                  try:
+                      r=ET.parse(f).getroot()
+                      for k in totals: totals[k]+=int(float(r.attrib.get(k,0)))
+                  except Exception: pass
+          code=int(os.environ.get('MAVEN_TEST_CODE','0'))
+          duration=int(os.environ.get('TEST_DURATION_MS','0'))
+          out={'mavenTestExit':code,'testDurationMs':duration,**totals}
+          Path('test-metrics-v4.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+          print(json.dumps(out,indent=2))
+          PY
+          echo "mavenTestExit=$CODE" > test-diagnostic-v4.txt
+          echo "testDurationMs=$((END-START))" >> test-diagnostic-v4.txt
+          tail -n 120 normalized-test.log || true
+        env:
+          MAVEN_TEST_CODE: '0'
+          TEST_DURATION_MS: '0'
+      - name: Recompute metrics from reports and shell diagnostic
+        if: always()
+        run: |
+          python3 <<'PY'
+          import json, re, xml.etree.ElementTree as ET
+          from pathlib import Path
+          d=Path('test-diagnostic-v4.txt').read_text() if Path('test-diagnostic-v4.txt').exists() else ''
+          code=int(re.search(r'mavenTestExit=(\d+)',d).group(1)) if re.search(r'mavenTestExit=(\d+)',d) else -1
+          dur=int(re.search(r'testDurationMs=(\d+)',d).group(1)) if re.search(r'testDurationMs=(\d+)',d) else -1
+          totals={'tests':0,'failures':0,'errors':0,'skipped':0}
+          rd=Path('target/surefire-reports')
+          if rd.exists():
+              for f in rd.glob('TEST-*.xml'):
+                  try:
+                      r=ET.parse(f).getroot()
+                      for k in totals: totals[k]+=int(float(r.attrib.get(k,0)))
+                  except Exception: pass
+          out={'mavenTestExit':code,'testDurationMs':dur,**totals}
+          Path('test-metrics-v4.json').write_text(json.dumps(out,indent=2),encoding='utf-8')
+          print(json.dumps(out,indent=2))
+          PY
+      - name: Upload test metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maven-test-v4
+          path: |
+            test-metrics-v4.json
+            test-diagnostic-v4.txt
+            normalized-test.log
+            target/surefire-reports/
+          if-no-files-found: warn
+          retention-days: 7
